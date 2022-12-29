@@ -1,0 +1,19 @@
+{
+    "connector.class": "com.mongodb.kafka.connect.MongoSinkConnector",
+    "connection.uri": "mongodb://mongodb:mongodb@mongodb:27017",
+    "database": "honeypot",
+    "collection": "honeytrap",
+    "topics": "honeytrap",
+    "transforms": "Filter, TimestampConverter",
+    "transforms.Filter.type": "io.confluent.connect.transforms.Filter$Value",
+    "transforms.Filter.filter.type": "exclude",
+    "transforms.Filter.filter.condition": "$[?(@.category == 'heartbeat')]",
+    "transforms.TimestampConverter.type": "org.apache.kafka.connect.transforms.TimestampConverter$Value",
+    "transforms.TimestampConverter.field": "date",
+    "transforms.TimestampConverter.format": "yyyy-MM-dd'T'HH:mm:ss",
+    "transforms.TimestampConverter.target.type": "Timestamp",
+    "timeseries.timefield": "date",
+    "timeseries.timefield.auto.convert": "true",
+    "timeseries.timefield.auto.convert.date.format": "yyyy-MM-dd'T'HH:mm:ss'Z'",
+    "tasks.max": 4
+}

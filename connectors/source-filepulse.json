@@ -1,0 +1,19 @@
+{
+    "topic": "honeytrap",
+    "connector.class": "io.streamthoughts.kafka.connect.filepulse.source.FilePulseSourceConnector",
+    "fs.cleanup.policy.class": "io.streamthoughts.kafka.connect.filepulse.fs.clean.DeleteCleanupPolicy",
+    "fs.listing.class": "io.streamthoughts.kafka.connect.filepulse.fs.LocalFSDirectoryListing",
+    "fs.listing.directory.path": "/logs/",
+    "fs.listing.filters": "io.streamthoughts.kafka.connect.filepulse.fs.filter.RegexFileListFilter",
+    "file.filter.regex.pattern": ".*\\.log$",
+    "tasks.reader.class": "io.streamthoughts.kafka.connect.filepulse.fs.reader.LocalRowFileInputReader",
+    "read.max.wait.ms": 100000,
+    "tasks.file.status.storage.class": "io.streamthoughts.kafka.connect.filepulse.state.InMemoryFileObjectStateBackingStore",
+    "filters": "ParseJSON, ExcludeFieldMessage",
+    "filters.ParseJSON.type": "io.streamthoughts.kafka.connect.filepulse.filter.JSONFilter",
+    "filters.ParseJSON.source": "message",
+    "filters.ParseJSON.merge": "true",
+    "filters.ExcludeFieldMessage.type": "io.streamthoughts.kafka.connect.filepulse.filter.ExcludeFilter",
+    "filters.ExcludeFieldMessage.fields": "message",
+    "tasks.max": 4
+}
