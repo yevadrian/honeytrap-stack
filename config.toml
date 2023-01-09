@@ -1,6 +1,13 @@
 [listener]
 type="socket"
 
+[service.ftp]
+type="ftp"
+
+[[port]]
+port="tcp/21"
+services=["ftp"]
+
 [service.ssh]
 type="ssh-simulator"
 
@@ -14,13 +21,6 @@ type="smtp"
 [[port]]
 port="tcp/25"
 services=["smtp"]
-
-[service.dns]
-type="dns"
-
-[[port]]
-port="udp/53"
-services=["dns"]
 
 [service.ethereum]
 type="ethereum"
