@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # Update repository and upgrade packages
 apt update -y && apt upgrade -y
 
