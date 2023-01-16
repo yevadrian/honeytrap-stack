@@ -1,4 +1,4 @@
-version: "3.9"
+version: "3"
 name: honeytrap
 
 services:
@@ -24,7 +24,7 @@ services:
       MONGO_INITDB_ROOT_USERNAME: mongodb
       MONGO_INITDB_ROOT_PASSWORD: mongodb
     volumes:
-      - mongodb-data:/data/db
+      - ./mongodb-data:/data/db
     restart: always
 
   metabase:
@@ -103,7 +103,5 @@ services:
     restart: always
 
 volumes:
-  mongodb-data:
-    name: mongodb-data
   honeytrap-logs:
     name: honeytrap-logs
