@@ -1,6 +1,6 @@
 #### Clone this repository and move into the directory
 ```bash
-https://github.com/yevadrian/honeytrap-kafka-docker && cd honeytrap-kafka-docker
+https://github.com/yevadrian/honeytrap-kafka-mongodb-metabase && cd honeytrap-kafka-mongodb-metabase
 ```
 
 #### Run the script to setup requirements
