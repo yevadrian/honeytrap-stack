@@ -32,6 +32,8 @@ services:
     image: metabase/metabase:latest
     ports:
       - "3000:3000"
+    volumes:
+      - ./metabase-data/metabase.db.mv.db:/metabase.db/metabase.db.mv.db
     restart: always
 
   zookeeper:
