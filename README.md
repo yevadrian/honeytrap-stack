@@ -20,7 +20,14 @@ bash connectors.sh
 
 #### Open MongoDB with credentials below
 ```txt
+uri = mongodb://mongodb:mongodb@localhost:27017/
 username = mongodb
 password = mongodb
-uri = mongodb://mongodb:mongodb@localhost:27017/
+```
+
+#### Open Metabase with credentials below
+```txt
+url = http://localhost:3000
+email = metabase@metabase.com
+password = metabase777
 ```
