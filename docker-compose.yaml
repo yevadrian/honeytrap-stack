@@ -1,4 +1,4 @@
-version: "3"
+version: "3.8"
 name: honeytrap
 
 services:
@@ -6,13 +6,11 @@ services:
     container_name: honeytrap
     image: honeytrap/honeytrap:latest
     ports:
-      - "21:21"
       - "22:22"
       - "25:25"
-      - "8545:8545"
     volumes: 
       - ./config.toml:/config/config.toml
-      - ./honeytrap-logs:/logs
+      - honeytrap-logs:/logs
     restart: always
 
   mongodb:
@@ -98,8 +96,11 @@ services:
       - ./connectors/source-filepulse:/usr/share/java/source-filepulse
       - ./connectors/sink-mongodb:/usr/share/java/sink-mongodb
       - ./connectors/confluent-smt:/usr/share/java/confluent-smt
-      - ./honeytrap-logs:/logs
+      - honeytrap-logs:/logs
     depends_on:
       - broker
     user: root
     restart: always
+
+volumes:
+  honeytrap-logs:
