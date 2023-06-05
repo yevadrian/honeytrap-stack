@@ -27,7 +27,7 @@ services:
 
   metabase:
     container_name: metabase
-    image: metabase/metabase:latest
+    image: metabase/metabase:v0.45.0
     ports:
       - "3000:3000"
     volumes:
