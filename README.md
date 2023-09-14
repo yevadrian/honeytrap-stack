@@ -5,17 +5,17 @@ git clone https://github.com/yevadrian/honeytrap-stack && cd honeytrap-stack
 
 #### Run the script to setup requirements
 ```bash
-sudo bash setup.sh
+bash setup.sh
 ```
 
 #### Deploy honeytrap and required apps with Docker Compose
 ```bash
-sudo docker compose up -d
+docker compose up -d
 ```
 
 #### Configure source and sink connectors for Kafka Connect
 ```bash
-sudo bash connectors.sh
+bash connectors.sh
 ```
 
 #### Open MongoDB with credentials below
