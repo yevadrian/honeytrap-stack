@@ -8,14 +8,14 @@ services:
     ports:
       - "22:22"
       - "25:25"
-    volumes: 
+    volumes:
       - ./config.toml:/config/config.toml
       - honeytrap-logs:/logs
     restart: always
 
   mongodb:
     container_name: mongodb
-    image: mongo:latest
+    image: mongo:6.0.3
     ports:
       - "27017:27017"
     environment:
@@ -27,7 +27,7 @@ services:
 
   metabase:
     container_name: metabase
-    image: metabase/metabase:latest
+    image: metabase/metabase:v0.45.0
     ports:
       - "3000:3000"
     volumes:
@@ -36,7 +36,7 @@ services:
 
   zookeeper:
     container_name: zookeeper
-    image: confluentinc/cp-zookeeper:latest
+    image: confluentinc/cp-zookeeper:6.1.9
     ports:
       - "2181:2181"
     environment:
@@ -46,7 +46,7 @@ services:
 
   broker:
     container_name: broker
-    image: confluentinc/cp-server:latest
+    image: confluentinc/cp-server:6.1.9
     ports:
       - "9092:9092"
     environment:
@@ -71,7 +71,7 @@ services:
 
   connect:
     container_name: connect
-    image: confluentinc/cp-kafka-connect:latest
+    image: confluentinc/cp-kafka-connect:6.1.9
     ports:
       - "8083:8083"
     environment:
